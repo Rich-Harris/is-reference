@@ -37,5 +37,8 @@
     "estree-walker": "^0.3.0",
     "mocha": "^3.2.0",
     "rollup": "^0.37.2"
+  },
+  "dependencies": {
+    "estree-parent": "^0.3.1"
   }
 }

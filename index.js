@@ -4,12 +4,16 @@
 	(global.isReference = factory());
 }(this, (function () { 'use strict';
 
-function isReference ( node, parent ) {
+const parentOf = require('estree-parent');
+
+function isReference ( node, source ) {
 	if ( node.type === 'MemberExpression' ) {
 		return !node.computed && isReference( node.object, node );
 	}
 
 	if ( node.type === 'Identifier' ) {
+		const parent = parentOf( node, source );
+
 		// the only time we could have an identifier node without a parent is
 		// if it's the entire body of a function without a block statement –
 		// i.e. an arrow function expression like `a => a`
