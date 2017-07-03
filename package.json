@@ -1,6 +1,6 @@
 {
   "name": "is-reference",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Determine whether an AST node is a reference",
   "main": "index.js",
   "module": "module.js",
