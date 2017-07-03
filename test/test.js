@@ -1,10 +1,10 @@
-const assert = require( 'assert' );
-const { parse } = require( 'acorn' );
-const { walk } = require( 'estree-walker' );
+const assert = require('assert');
+const { parse } = require('acorn');
+const { walk } = require('estree-walker');
 
-const isReference = require( '../' );
+const isReference = require('../');
 
-describe( 'is-reference', () => {
+describe('is-reference', () => {
 	const positive = {
 		'simple identifier': `
 			foo;`,
@@ -42,42 +42,42 @@ describe( 'is-reference', () => {
 			export { bar as foo }`
 	};
 
-	describe( 'positive', () => {
-		Object.keys( positive ).forEach( name => {
-			it( name, () => {
-				const code = positive[ name ];
-				const matches = findFooReferences( code );
+	describe('positive', () => {
+		Object.keys(positive).forEach(name => {
+			it(name, () => {
+				const code = positive[name];
+				const matches = findFooReferences(code);
 
-				assert.equal( matches.size, 1 );
+				assert.equal(matches.size, 1);
 			});
 		});
 	});
 
-	describe( 'negative', () => {
-		Object.keys( negative ).forEach( name => {
-			it( name, () => {
-				const code = negative[ name ];
-				const matches = findFooReferences( code );
+	describe('negative', () => {
+		Object.keys(negative).forEach(name => {
+			it(name, () => {
+				const code = negative[name];
+				const matches = findFooReferences(code);
 
-				assert.equal( matches.size, 0 );
+				assert.equal(matches.size, 0);
 			});
 		});
 	});
 
-	function findFooReferences ( code ) {
-		const ast = parse( code, {
+	function findFooReferences(code) {
+		const ast = parse(code, {
 			sourceType: 'module',
 			ecmaVersion: 8
 		});
 
-		const matches = new Set;
+		const matches = new Set();
 
-		walk( ast, {
-			enter ( node, parent ) {
-				const match = isReference( node, parent );
-				assert.equal( typeof match, 'boolean' );
-				if ( match && node.name === 'foo' ) {
-					matches.add( node );
+		walk(ast, {
+			enter(node, parent) {
+				const match = isReference(node, parent);
+				assert.equal(typeof match, 'boolean');
+				if (match && node.name === 'foo') {
+					matches.add(node);
 				}
 			}
 		});
