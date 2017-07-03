@@ -27,10 +27,12 @@ function isReference ( node, parent ) {
 		if ( parent.type === 'MethodDefinition' ) return false;
 
 		// disregard the `bar` in `export { foo as bar }`
-		if ( parent.type === 'ExportSpecifier' && node !== parent.local ) return;
+		if ( parent.type === 'ExportSpecifier' && node !== parent.local ) return false;
 
 		return true;
 	}
+
+	return false;
 }
 
 return isReference;

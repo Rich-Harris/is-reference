@@ -36,7 +36,10 @@ describe( 'is-reference', () => {
 			var obj = { foo: 1 };`,
 
 		'member expression property': `
-			obj.foo;`
+			obj.foo;`,
+
+		'export-as': `
+			export { bar as foo }`
 	};
 
 	describe( 'positive', () => {
@@ -62,13 +65,18 @@ describe( 'is-reference', () => {
 	});
 
 	function findFooReferences ( code ) {
-		const ast = parse( code );
+		const ast = parse( code, {
+			sourceType: 'module',
+			ecmaVersion: 8
+		});
 
 		const matches = new Set;
 
 		walk( ast, {
 			enter ( node, parent ) {
-				if ( isReference( node, parent ) && node.name === 'foo' ) {
+				const match = isReference( node, parent );
+				assert.equal( typeof match, 'boolean' );
+				if ( match && node.name === 'foo' ) {
 					matches.add( node );
 				}
 			}
