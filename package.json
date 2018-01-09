@@ -32,6 +32,9 @@
     "url": "https://github.com/Rich-Harris/is-reference/issues"
   },
   "homepage": "https://github.com/Rich-Harris/is-reference#readme",
+  "dependencies": {
+    "@types/estree": "0.0.38"
+  },
   "devDependencies": {
     "acorn": "^4.0.4",
     "eslint": "^3.12.2",
