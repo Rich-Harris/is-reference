@@ -1,5 +1,7 @@
+import typescript from 'rollup-plugin-typescript';
+
 export default {
-	input: 'src/index.js',
+	input: 'src/index.ts',
 	output: [{
 		file: 'dist/is-reference.js',
 		format: 'umd',
@@ -7,5 +9,10 @@ export default {
 	}, {
 		file: 'dist/is-reference.es.js',
 		format: 'es'
-	}]
+	}],
+	plugins: [
+		typescript({
+			typescript: require('typescript')
+		})
+	]
 };
