@@ -2,17 +2,16 @@
   "name": "is-reference",
   "version": "1.0.1",
   "description": "Determine whether an AST node is a reference",
-  "main": "index.js",
-  "module": "module.js",
+  "main": "dist/is-reference.js",
+  "module": "dist/is-reference.es.js",
   "files": [
-    "index.js",
-    "module.js"
+    "dist"
   ],
   "scripts": {
     "test": "mocha",
     "build": "rollup -c",
     "pretest": "npm run build",
-    "lint": "eslint module.js",
+    "lint": "eslint src/**/*.js",
     "prepublish": "npm run lint && npm test"
   },
   "repository": {
@@ -36,6 +35,6 @@
     "eslint": "^3.12.2",
     "estree-walker": "^0.3.0",
     "mocha": "^3.2.0",
-    "rollup": "^0.37.2"
+    "rollup": "^0.53.3"
   }
 }
