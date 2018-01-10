@@ -19,10 +19,6 @@ export default function isReference (node: Node, parent: Node): boolean {
 		// disregard the `bar` in `{ bar: foo }`, but keep it in `{ [bar]: foo }`
 		if (parent.type === 'Property') return parent.computed || node === parent.value;
 
-		// disregard the `bar` in `class Foo { bar () {...} }`
-		// TODO Dead code? Already handled above
-		// if (parent.type === 'MethodDefinition') return false;
-
 		// disregard the `bar` in `export { foo as bar }`
 		if (parent.type === 'ExportSpecifier' && node !== parent.local) return false;
 
