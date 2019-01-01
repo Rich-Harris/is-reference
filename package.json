@@ -1,6 +1,6 @@
 {
   "name": "is-reference",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "Determine whether an AST node is a reference",
   "main": "dist/is-reference.js",
   "module": "dist/is-reference.es.js",
@@ -13,8 +13,7 @@
     "test": "mocha",
     "build": "rollup -c && tsc",
     "pretest": "npm run build",
-    "lint": "eslint src/**/*.js",
-    "prepublish": "npm run lint && npm test"
+    "prepublish": "npm test"
   },
   "repository": {
     "type": "git",
@@ -33,15 +32,15 @@
   },
   "homepage": "https://github.com/Rich-Harris/is-reference#readme",
   "dependencies": {
-    "@types/estree": "0.0.38"
+    "@types/estree": "0.0.39"
   },
   "devDependencies": {
-    "acorn": "^4.0.4",
-    "eslint": "^3.12.2",
-    "estree-walker": "^0.3.0",
-    "mocha": "^3.2.0",
-    "rollup": "^0.53.3",
-    "rollup-plugin-typescript": "^0.8.1",
-    "typescript": "^2.6.2"
+    "acorn": "^6.0.4",
+    "estree-walker": "^0.6.0",
+    "mocha": "^5.2.0",
+    "rollup": "^1.0.0",
+    "rollup-plugin-typescript": "^1.0.0",
+    "tslib": "^1.9.3",
+    "typescript": "^3.2.2"
   }
 }
