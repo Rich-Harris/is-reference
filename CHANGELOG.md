@@ -1,5 +1,9 @@
 # is-reference changelog
 
+## 1.1.1
+
+* Prevent false positives with labeled statements
+
 ## 1.1.0
 
 * Rewrite in TypeScript, add declarations
