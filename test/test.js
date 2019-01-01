@@ -39,7 +39,10 @@ describe('is-reference', () => {
 			obj.foo;`,
 
 		'export-as': `
-			export { bar as foo }`
+			export { bar as foo }`,
+
+		'labeled statement': `
+			foo: console.log(42);`
 	};
 
 	describe('positive', () => {

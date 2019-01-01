@@ -20,6 +20,9 @@ export default function isReference (node: Node, parent: Node): boolean {
 		// disregard the `bar` in `export { foo as bar }`
 		if (parent.type === 'ExportSpecifier' && node !== parent.local) return false;
 
+		// disregard the foo in `foo: bar`
+		if (parent.type === 'LabeledStatement') return false;
+
 		return true;
 	}
 
