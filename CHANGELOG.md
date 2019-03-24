@@ -1,5 +1,9 @@
 # is-reference changelog
 
+## 1.1.2
+
+* Ignore labels in break/continue statements ([#4](https://github.com/Rich-Harris/is-reference/pull/4))
+
 ## 1.1.1
 
 * Prevent false positives with labeled statements
