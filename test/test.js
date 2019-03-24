@@ -28,8 +28,11 @@ describe('is-reference', () => {
 			function x ( foo = 1 ) {}`,
 
 		'assignment pattern in object pattern': `
-			function x ({ foo = 42 }) {}`
-	};
+			function x ({ foo = 42 }) {}`,
+
+		'member expression object': `
+			foo.prop;`,
+		};
 
 	const negative = {
 		'object literal property': `
@@ -39,10 +42,13 @@ describe('is-reference', () => {
 			obj.foo;`,
 
 		'export-as': `
-			export { bar as foo }`,
+			var bar; export { bar as foo }`,
 
-		'labeled statement': `
-			foo: console.log(42);`
+		'labeled break': `
+		  foo: while (true) break foo;`,
+
+		'labeled continue': `
+			foo: while (true) continue foo;`
 	};
 
 	describe('positive', () => {
