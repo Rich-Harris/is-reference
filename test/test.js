@@ -30,9 +30,9 @@ describe('is-reference', () => {
 		'assignment pattern in object pattern': `
 			function x ({ foo = 42 }) {}`,
 
-    'member expression object': `
+		'member expression object': `
 			foo.prop;`,
-  };
+		};
 
 	const negative = {
 		'object literal property': `
