@@ -13,7 +13,8 @@
     "test": "mocha",
     "build": "rollup -c && tsc --emitDeclarationOnly",
     "pretest": "npm run build",
-    "prepublish": "npm test"
+    "prepare": "npm run build",
+    "prepublishOnly": "npm test"
   },
   "repository": {
     "type": "git",
