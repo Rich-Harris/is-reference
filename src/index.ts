@@ -6,6 +6,8 @@ export default function isReference (node: Node, parent: Node): boolean {
 	}
 
 	if (node.type === 'Identifier') {
+		if (!parent) return true;
+
 		switch (parent.type) {
 			// disregard `bar` in `foo.bar`
 			case 'MemberExpression': return parent.computed || node === parent.object;

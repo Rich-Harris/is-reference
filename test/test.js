@@ -60,6 +60,13 @@ describe('is-reference', () => {
 				assert.equal(matches.size, 1);
 			});
 		});
+
+		it('handles standalone expressions, without a Program', () => {
+			assert.ok(isReference({
+				type: 'Identifier',
+				name: 'foo'
+			}))
+		});
 	});
 
 	describe('negative', () => {

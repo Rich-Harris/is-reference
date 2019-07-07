@@ -1,5 +1,9 @@
 # is-reference changelog
 
+## 1.1.3
+
+* Handle expressions without a Program
+
 ## 1.1.2
 
 * Ignore labels in break/continue statements ([#4](https://github.com/Rich-Harris/is-reference/pull/4))
