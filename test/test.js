@@ -48,7 +48,10 @@ describe('is-reference', () => {
 		  foo: while (true) break foo;`,
 
 		'labeled continue': `
-			foo: while (true) continue foo;`
+			foo: while (true) continue foo;`,
+
+		'imported': `
+			import { foo as bar } from 'x';`
 	};
 
 	describe('positive', () => {
