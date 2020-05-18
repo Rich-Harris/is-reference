@@ -1,5 +1,9 @@
 const assert = require('assert');
-const { parse } = require('acorn');
+const { Parser } = require('acorn');
+const injectClassFields = require('acorn-class-fields');
+const injectStaticClassFeatures = require('acorn-static-class-features');
+const parser = Parser.extend(injectClassFields, injectStaticClassFeatures);
+
 const { walk } = require('estree-walker');
 
 const isReference = require('../');
@@ -32,6 +36,18 @@ describe('is-reference', () => {
 
 		'member expression object': `
 			foo.prop;`,
+
+		'computed object literal property': `
+			var obj = { [foo]: 1 };`,
+
+		'object literal property value': `
+			var obj = { bar: foo };`,
+
+		'computed class field': `
+			class Bar { [foo] = 1 };`,
+
+		'class field value': `
+			class Bar { bar = foo };`,
 		};
 
 	const negative = {
@@ -51,7 +67,10 @@ describe('is-reference', () => {
 			foo: while (true) continue foo;`,
 
 		'imported': `
-			import { foo as bar } from 'x';`
+			import { foo as bar } from 'x';`,
+
+		'class field': `
+			class Bar { foo = 1; }`,
 	};
 
 	describe('positive', () => {
@@ -84,9 +103,9 @@ describe('is-reference', () => {
 	});
 
 	function findFooReferences(code) {
-		const ast = parse(code, {
+		const ast = parser.parse(code, {
 			sourceType: 'module',
-			ecmaVersion: 8
+			ecmaVersion: 2020
 		});
 
 		const matches = new Set();
