@@ -1,5 +1,9 @@
 # is-reference changelog
 
+## 1.2.0
+
+* Handle class fields ([#](https://github.com/Rich-Harris/is-reference/pull/8))
+
 ## 1.1.4
 
 * Disregarded imported specifiers if they differ from local specifiers
