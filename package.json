@@ -33,7 +33,7 @@
   },
   "homepage": "https://github.com/Rich-Harris/is-reference#readme",
   "dependencies": {
-    "@types/estree": "0.0.44"
+    "@types/estree": "*"
   },
   "devDependencies": {
     "acorn": "^7.2.0",
