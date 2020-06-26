@@ -1,5 +1,9 @@
 # is-reference changelog
 
+## 1.2.1
+
+* Relax version range for `@types/estree`
+
 ## 1.2.0
 
 * Handle class fields ([#](https://github.com/Rich-Harris/is-reference/pull/8))
