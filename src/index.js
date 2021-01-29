@@ -1,8 +1,20 @@
-import { Node } from 'estree';
+//@ts-check
+/** @typedef { import('estree').Node} Node */
+/** @typedef {Node | {
+ *   type: 'FieldDefinition';
+ *   computed: boolean;
+ *   value: Node
+ * }} NodeWithFieldDefinition */
 
-export default function isReference (node: Node, parent: Node): boolean {
+/**
+ *
+ * @param {NodeWithFieldDefinition} node
+ * @param {NodeWithFieldDefinition} parent
+ * @returns boolean
+ */
+export default function is_reference (node, parent) {
 	if (node.type === 'MemberExpression') {
-		return !node.computed && isReference(node.object, node);
+		return !node.computed && is_reference(node.object, node);
 	}
 
 	if (node.type === 'Identifier') {
@@ -16,7 +28,7 @@ export default function isReference (node: Node, parent: Node): boolean {
 			case 'MethodDefinition': return parent.computed;
 
 			// disregard the `foo` in `class {foo=bar}` but keep it in `class {[foo]=bar}` and `class {bar=foo}`
-			case 'FieldDefinition' as any: return (parent as any).computed || node === (parent as any).value;
+			case 'FieldDefinition': return parent.computed || node === parent.value;
 
 			// disregard the `bar` in `{ bar: foo }`, but keep it in `{ [bar]: foo }`
 			case 'Property': return parent.computed || node === parent.value;

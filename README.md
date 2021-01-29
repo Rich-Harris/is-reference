@@ -5,10 +5,10 @@ Utility for determining whether an AST node is a reference.
 `foo` is a reference in these cases:
 
 ```js
-console.log( foo );
+console.log(foo);
 var foo;
-function foo () {}
-function bar ( foo ) {}
+function foo() {}
+function bar(foo) {}
 export { foo as x };
 ```
 
@@ -16,7 +16,7 @@ export { foo as x };
 
 ```js
 var obj = { foo: 1 };
-console.log( obj.foo );
+console.log(obj.foo);
 export { x as foo };
 ```
 
@@ -35,24 +35,24 @@ npm install is-reference
 Example using [Acorn](https://github.com/ternjs/acorn) and [estree-walker](https://github.com/Rich-Harris/estree-walker):
 
 ```js
-const { parse } = require( 'acorn' );
-const { walk } = require( 'estree-walker' );
-const isReference = require( 'is-reference' );
+import { parse } from 'acorn';
+import { walk } from 'estree-walker';
+import is_reference from 'is-reference';
 
 const identifiers = [];
 const references = [];
 
-const ast = parse( `var a = b.c;` );
+const ast = parse(`var a = b.c;`);
 
-walk( ast, {
-	enter ( node, parent ) {
-		if ( node.type === 'Identifier' ) identifiers.push( node );
-		if ( isReference( node, parent ) ) references.push( node );
+walk(ast, {
+	enter(node, parent) {
+		if (node.type === 'Identifier') identifiers.push(node);
+		if (is_reference(node, parent)) references.push(node);
 	}
 });
 
-identifiers.forEach( node => console.log( node.name ) ); // a, b, c
-references.forEach( node => console.log( node.name ) ); // a, b
+identifiers.forEach(node => console.log(node.name)); // a, b, c
+references.forEach(node => console.log(node.name)); // a, b
 ```
 
 

@@ -1,5 +1,9 @@
 # is-reference changelog
 
+## 2.0.0
+
+* Convert to JavaScript
+
 ## 1.2.1
 
 * Relax version range for `@types/estree`
