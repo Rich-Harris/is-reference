@@ -1,15 +1,15 @@
 //@ts-check
 /** @typedef { import('estree').Node} Node */
 /** @typedef {Node | {
- *   type: 'FieldDefinition';
+ *   type: 'PropertyDefinition';
  *   computed: boolean;
  *   value: Node
- * }} NodeWithFieldDefinition */
+ * }} NodeWithPropertyDefinition */
 
 /**
  *
- * @param {NodeWithFieldDefinition} node
- * @param {NodeWithFieldDefinition} parent
+ * @param {NodeWithPropertyDefinition} node
+ * @param {NodeWithPropertyDefinition} parent
  * @returns boolean
  */
 export default function is_reference (node, parent) {
@@ -28,7 +28,7 @@ export default function is_reference (node, parent) {
 			case 'MethodDefinition': return parent.computed;
 
 			// disregard the `foo` in `class {foo=bar}` but keep it in `class {[foo]=bar}` and `class {bar=foo}`
-			case 'FieldDefinition': return parent.computed || node === parent.value;
+			case 'PropertyDefinition': return parent.computed || node === parent.value;
 
 			// disregard the `bar` in `{ bar: foo }`, but keep it in `{ [bar]: foo }`
 			case 'Property': return parent.computed || node === parent.value;
