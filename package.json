@@ -36,11 +36,11 @@
     "@types/estree": "*"
   },
   "devDependencies": {
-    "acorn": "^7.2.0",
-    "acorn-class-fields": "^0.3.2",
-    "acorn-static-class-features": "^0.2.1",
+    "acorn": "^8.0.5",
+    "acorn-class-fields": "^1.0.0",
+    "acorn-static-class-features": "^1.0.0",
     "estree-walker": "^3.0.0",
-    "typescript": "^3.9.2",
+    "typescript": "^4.1.5",
     "uvu": "^0.5.1"
   }
 }

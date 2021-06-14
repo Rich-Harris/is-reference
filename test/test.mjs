@@ -1,4 +1,4 @@
-import acorn from 'acorn';
+import * as acorn from 'acorn';
 import injectClassFields from 'acorn-class-fields';
 import injectStaticClassFeatures from 'acorn-static-class-features';
 import { walk } from 'estree-walker';
