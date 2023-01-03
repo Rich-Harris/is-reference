@@ -1,4 +1,3 @@
-//@ts-check
 /** @typedef { import('estree').Node} Node */
 /** @typedef {Node | {
  *   type: 'PropertyDefinition';
@@ -10,7 +9,7 @@
  *
  * @param {NodeWithPropertyDefinition} node
  * @param {NodeWithPropertyDefinition} parent
- * @returns boolean
+ * @returns {boolean}
  */
 export default function is_reference (node, parent) {
 	if (node.type === 'MemberExpression') {
