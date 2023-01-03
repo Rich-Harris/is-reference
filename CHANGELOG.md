@@ -1,5 +1,9 @@
 # is-reference changelog
 
+## 3.0.1
+
+- Add `types` export to `package.json` ([#14](https://github.com/Rich-Harris/is-reference/pull/14))
+
 ## 3.0.0
 
 - Use updated ESTree types ([#11](https://github.com/Rich-Harris/is-reference/pull/11))
