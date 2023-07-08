@@ -7,7 +7,7 @@
 	"types": "types/index.d.ts",
 	"exports": {
 		"types": "./types/index.d.ts",
-		"import": "./src/index.js"
+		"default": "./src/index.js"
 	},
 	"files": [
 		"src",
@@ -41,7 +41,7 @@
 		"acorn-class-fields": "^1.0.0",
 		"acorn-static-class-features": "^1.0.0",
 		"estree-walker": "^3.0.0",
-		"typescript": "^4.1.5",
+		"typescript": "^5.1.6",
 		"uvu": "^0.5.1"
 	}
 }

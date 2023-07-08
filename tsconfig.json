@@ -5,9 +5,7 @@
 		"strict": true,
 		"target": "es2017",
 		"module": "node16",
-		"declaration": true,
-		"emitDeclarationOnly": true,
-		"outDir": "types"
+		"noEmit": true
 	},
 
 	"include": [

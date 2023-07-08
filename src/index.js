@@ -1,17 +1,5 @@
-/** @typedef { import('estree').Node} Node */
-/** @typedef {Node | {
- *   type: 'PropertyDefinition';
- *   computed: boolean;
- *   value: Node
- * }} NodeWithPropertyDefinition */
-
-/**
- *
- * @param {NodeWithPropertyDefinition} node
- * @param {NodeWithPropertyDefinition} parent
- * @returns {boolean}
- */
-export default function is_reference (node, parent) {
+/** @type {import('is-reference').default} */
+export default function is_reference(node, parent) {
 	if (node.type === 'MemberExpression') {
 		return !node.computed && is_reference(node.object, node);
 	}
