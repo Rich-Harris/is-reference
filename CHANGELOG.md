@@ -1,5 +1,9 @@
 # is-reference changelog
 
+## 3.0.2
+
+- Generate types with `dts-buddy`
+
 ## 3.0.1
 
 - Add `types` export to `package.json` ([#14](https://github.com/Rich-Harris/is-reference/pull/14))
