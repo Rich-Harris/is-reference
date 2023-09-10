@@ -45,9 +45,9 @@ const references = [];
 const ast = parse(`var a = b.c;`);
 
 walk(ast, {
-	enter(node, parent) {
+	enter(node, parent, prop) {
 		if (node.type === 'Identifier') identifiers.push(node);
-		if (is_reference(node, parent)) references.push(node);
+		if (prop !== 'init' && is_reference(node, parent)) references.push(node);
 	}
 });
 
