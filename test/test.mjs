@@ -70,6 +70,8 @@ const negative = {
 
 	'class field': `
 		class Bar { foo = 1; }`,
+	'meta property': `
+		import.meta`,
 };
 
 function findFooReferences(code) {
