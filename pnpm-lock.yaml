@@ -1,217 +1,243 @@
-lockfileVersion: '6.0'
+lockfileVersion: '9.0'
 
 settings:
   autoInstallPeers: true
   excludeLinksFromLockfile: false
 
-dependencies:
-  '@types/estree':
-    specifier: '*'
-    version: 1.0.1
+importers:
 
-devDependencies:
-  acorn:
-    specifier: ^8.0.5
-    version: 8.10.0
-  acorn-class-fields:
-    specifier: ^1.0.0
-    version: 1.0.0(acorn@8.10.0)
-  acorn-static-class-features:
-    specifier: ^1.0.0
-    version: 1.0.0(acorn@8.10.0)
-  dts-buddy:
-    specifier: ^0.2.4
-    version: 0.2.4
-  estree-walker:
-    specifier: ^3.0.0
-    version: 3.0.3
-  typescript:
-    specifier: ^4.1.5
-    version: 4.9.5
-  uvu:
-    specifier: ^0.5.1
-    version: 0.5.6
+  .:
+    dependencies:
+      '@types/estree':
+        specifier: '*'
+        version: 1.0.1
+    devDependencies:
+      acorn:
+        specifier: ^8.0.5
+        version: 8.10.0
+      acorn-class-fields:
+        specifier: ^1.0.0
+        version: 1.0.0(acorn@8.10.0)
+      acorn-static-class-features:
+        specifier: ^1.0.0
+        version: 1.0.0(acorn@8.10.0)
+      dts-buddy:
+        specifier: ^0.5.3
+        version: 0.5.3(typescript@5.6.3)
+      estree-walker:
+        specifier: ^3.0.0
+        version: 3.0.3
+      typescript:
+        specifier: ^5.6.3
+        version: 5.6.3
+      uvu:
+        specifier: ^0.5.6
+        version: 0.5.6
 
 packages:
 
-  /@jridgewell/gen-mapping@0.3.3:
-    resolution: {integrity: sha512-HLhSWOLRi875zjjMG/r+Nv0oCW8umGb0BgEhyX3dDX3egwZtB8PqLnjz3yedt8R5StBrzcg4aBpnh8UA9D1BoQ==}
+  '@jridgewell/gen-mapping@0.3.5':
+    resolution: {integrity: sha512-IzL8ZoEDIBRWEzlCcRhOaCupYyN5gdIK+Q6fbFdPDg6HqX6jpkItn7DFIpW9LQzXG6Df9sA7+OKnq0qlz/GaQg==}
     engines: {node: '>=6.0.0'}
-    dependencies:
-      '@jridgewell/set-array': 1.1.2
-      '@jridgewell/sourcemap-codec': 1.4.15
-      '@jridgewell/trace-mapping': 0.3.19
-    dev: true
 
-  /@jridgewell/resolve-uri@3.1.1:
-    resolution: {integrity: sha512-dSYZh7HhCDtCKm4QakX0xFpsRDqjjtZf/kjI/v3T3Nwt5r8/qz/M19F9ySyOqU94SXBmeG9ttTul+YnR4LOxFA==}
+  '@jridgewell/resolve-uri@3.1.2':
+    resolution: {integrity: sha512-bRISgCIjP20/tbWSPWMEi54QVPRZExkuD9lJL+UIxUKtwVJA8wW1Trb1jMs1RFXo1CBTNZ/5hpC9QvmKWdopKw==}
     engines: {node: '>=6.0.0'}
-    dev: true
 
-  /@jridgewell/set-array@1.1.2:
-    resolution: {integrity: sha512-xnkseuNADM0gt2bs+BvhO0p78Mk762YnZdsuzFV018NoG1Sj1SCQvpSqa7XUaTam5vAGasABV9qXASMKnFMwMw==}
+  '@jridgewell/set-array@1.2.1':
+    resolution: {integrity: sha512-R8gLRTZeyp03ymzP/6Lil/28tGeGEzhx1q2k703KGWRAI1VdvPIXdG70VJc2pAMw3NA6JKL5hhFu1sJX0Mnn/A==}
     engines: {node: '>=6.0.0'}
-    dev: true
 
-  /@jridgewell/source-map@0.3.5:
-    resolution: {integrity: sha512-UTYAUj/wviwdsMfzoSJspJxbkH5o1snzwX0//0ENX1u/55kkZZkcTZP6u9bwKGkv+dkk9at4m1Cpt0uY80kcpQ==}
-    dependencies:
-      '@jridgewell/gen-mapping': 0.3.3
-      '@jridgewell/trace-mapping': 0.3.19
-    dev: true
+  '@jridgewell/source-map@0.3.6':
+    resolution: {integrity: sha512-1ZJTZebgqllO79ue2bm3rIGud/bOe0pP5BjSRCRxxYkEZS8STV7zN84UBbiYu7jy+eCKSnVIUgoWWE/tt+shMQ==}
 
-  /@jridgewell/sourcemap-codec@1.4.15:
-    resolution: {integrity: sha512-eF2rxCRulEKXHTRiDrDy6erMYWqNw4LPdQ8UQA4huuxaQsVeRPFl2oM8oDGxMFhJUWZf9McpLtJasDDZb/Bpeg==}
-    dev: true
+  '@jridgewell/sourcemap-codec@1.5.0':
+    resolution: {integrity: sha512-gv3ZRaISU3fjPAgNsriBRqGWQL6quFx04YMPW/zD8XMLsU32mhCCbfbO6KZFLjvYpCZ8zyDEgqsgf+PwPaM7GQ==}
 
-  /@jridgewell/trace-mapping@0.3.19:
-    resolution: {integrity: sha512-kf37QtfW+Hwx/buWGMPcR60iF9ziHa6r/CZJIHbmcm4+0qrXiVdxegAH0F6yddEVQ7zdkjcGCgCzUu+BcbhQxw==}
-    dependencies:
-      '@jridgewell/resolve-uri': 3.1.1
-      '@jridgewell/sourcemap-codec': 1.4.15
-    dev: true
+  '@jridgewell/trace-mapping@0.3.25':
+    resolution: {integrity: sha512-vNk6aEwybGtawWmy/PzwnGDOjCkLWSD2wqvjGGAgOAwCGWySYXfYoxt00IJkTF+8Lb57DwOb3Aa0o9CApepiYQ==}
 
-  /@types/estree@1.0.1:
+  '@types/estree@1.0.1':
     resolution: {integrity: sha512-LG4opVs2ANWZ1TJoKc937iMmNstM/d0ae1vNbnBvBhqCSezgVUOzcLCqbI5elV8Vy6WKwKjaqR+zO9VKirBBCA==}
 
-  /acorn-class-fields@1.0.0(acorn@8.10.0):
+  acorn-class-fields@1.0.0:
     resolution: {integrity: sha512-l+1FokF34AeCXGBHkrXFmml9nOIRI+2yBnBpO5MaVAaTIJ96irWLtcCxX+7hAp6USHFCe+iyyBB4ZhxV807wmA==}
     engines: {node: '>=4.8.2'}
     peerDependencies:
       acorn: ^6 || ^7 || ^8
-    dependencies:
-      acorn: 8.10.0
-      acorn-private-class-elements: 1.0.0(acorn@8.10.0)
-    dev: true
 
-  /acorn-private-class-elements@1.0.0(acorn@8.10.0):
+  acorn-private-class-elements@1.0.0:
     resolution: {integrity: sha512-zYNcZtxKgVCg1brS39BEou86mIao1EV7eeREG+6WMwKbuYTeivRRs6S2XdWnboRde6G9wKh2w+WBydEyJsJ6mg==}
     engines: {node: '>=4.8.2'}
     peerDependencies:
       acorn: ^6.1.0 || ^7 || ^8
-    dependencies:
-      acorn: 8.10.0
-    dev: true
 
-  /acorn-static-class-features@1.0.0(acorn@8.10.0):
+  acorn-static-class-features@1.0.0:
     resolution: {integrity: sha512-XZJECjbmMOKvMHiNzbiPXuXpLAJfN3dAKtfIYbk1eHiWdsutlek+gS7ND4B8yJ3oqvHo1NxfafnezVmq7NXK0A==}
     engines: {node: '>=4.8.2'}
     peerDependencies:
       acorn: ^6.1.0 || ^7 || ^8
-    dependencies:
-      acorn: 8.10.0
-      acorn-private-class-elements: 1.0.0(acorn@8.10.0)
-    dev: true
 
-  /acorn@8.10.0:
+  acorn@8.10.0:
     resolution: {integrity: sha512-F0SAmZ8iUtS//m8DmCTA0jlh6TDKkHQyK6xc6V4KDTyZKA9dnvX9/3sRTVQrWm79glUAZbnmmNcdYwUIHWVybw==}
     engines: {node: '>=0.4.0'}
     hasBin: true
-    dev: true
 
-  /dequal@2.0.3:
+  dequal@2.0.3:
     resolution: {integrity: sha512-0je+qPKHEMohvfRTCEo3CrPG6cAzAYgmzKyxRiYSSDkS6eGJdyVJm7WaYA5ECaAD9wLB2T4EEeymA5aFVcYXCA==}
     engines: {node: '>=6'}
-    dev: true
 
-  /diff@5.1.0:
-    resolution: {integrity: sha512-D+mk+qE8VC/PAUrlAU34N+VfXev0ghe5ywmpqrawphmVZc1bEfn56uo9qpyGp1p4xpzOHkSW4ztBd6L7Xx4ACw==}
+  diff@5.2.0:
+    resolution: {integrity: sha512-uIFDxqpRZGZ6ThOk84hEfqWoHx2devRFvpTZcTHur85vImfaxUbTW9Ryh4CpCuDnToOP1CEtXKIgytHBPVff5A==}
     engines: {node: '>=0.3.1'}
-    dev: true
 
-  /dts-buddy@0.2.4:
-    resolution: {integrity: sha512-41d7aGv2DXJYlzeKSKHf0GtpCC8OdpEHhz+aqjylKV5aP3fl4APzNmQ5hL5vSKZMaO/lrkrKWC+HQrxl+mcgUw==}
+  dts-buddy@0.5.3:
+    resolution: {integrity: sha512-wS2DC5T+F6R+sG/YNlJ21yn8CKVhy1QQlpKA34G+uO4PUXkwz+JQWbGcIryUByxoJgbH98O0dTGzE2RqsRR3KA==}
     hasBin: true
-    dependencies:
-      '@jridgewell/source-map': 0.3.5
-      '@jridgewell/sourcemap-codec': 1.4.15
-      globrex: 0.1.2
-      kleur: 4.1.5
-      locate-character: 3.0.0
-      magic-string: 0.30.3
-      sade: 1.8.1
-      tiny-glob: 0.2.9
-      ts-api-utils: 1.0.3(typescript@5.0.4)
-      typescript: 5.0.4
-    dev: true
+    peerDependencies:
+      typescript: '>=5.0.4 <5.6'
 
-  /estree-walker@3.0.3:
+  estree-walker@3.0.3:
     resolution: {integrity: sha512-7RUKfXgSMMkzt6ZuXmqapOurLGPPfgj6l9uRZ7lRGolvk0y2yocc35LdcxKC5PQZdn2DMqioAQ2NoWcrTKmm6g==}
-    dependencies:
-      '@types/estree': 1.0.1
-    dev: true
 
-  /globalyzer@0.1.0:
+  globalyzer@0.1.0:
     resolution: {integrity: sha512-40oNTM9UfG6aBmuKxk/giHn5nQ8RVz/SS4Ir6zgzOv9/qC3kKZ9v4etGTcJbEl/NyVQH7FGU7d+X1egr57Md2Q==}
-    dev: true
 
-  /globrex@0.1.2:
+  globrex@0.1.2:
     resolution: {integrity: sha512-uHJgbwAMwNFf5mLst7IWLNg14x1CkeqglJb/K3doi4dw6q2IvAAmM/Y81kevy83wP+Sst+nutFTYOGg3d1lsxg==}
-    dev: true
 
-  /kleur@4.1.5:
+  kleur@4.1.5:
     resolution: {integrity: sha512-o+NO+8WrRiQEE4/7nwRJhN1HWpVmJm511pBHUxPLtp0BUISzlBplORYSmTclCnJvQq2tKu/sgl3xVpkc7ZWuQQ==}
     engines: {node: '>=6'}
-    dev: true
 
-  /locate-character@3.0.0:
+  locate-character@3.0.0:
     resolution: {integrity: sha512-SW13ws7BjaeJ6p7Q6CO2nchbYEc3X3J6WrmTTDto7yMPqVSZTUyY5Tjbid+Ab8gLnATtygYtiDIJGQRRn2ZOiA==}
-    dev: true
 
-  /magic-string@0.30.3:
-    resolution: {integrity: sha512-B7xGbll2fG/VjP+SWg4sX3JynwIU0mjoTc6MPpKNuIvftk6u6vqhDnk1R80b8C2GBR6ywqy+1DcKBrevBg+bmw==}
-    engines: {node: '>=12'}
-    dependencies:
-      '@jridgewell/sourcemap-codec': 1.4.15
-    dev: true
+  magic-string@0.30.12:
+    resolution: {integrity: sha512-Ea8I3sQMVXr8JhN4z+H/d8zwo+tYDgHE9+5G4Wnrwhs0gaK9fXTKx0Tw5Xwsd/bCPTTZNRAdpyzvoeORe9LYpw==}
 
-  /mri@1.2.0:
+  mri@1.2.0:
     resolution: {integrity: sha512-tzzskb3bG8LvYGFF/mDTpq3jpI6Q9wc3LEmBaghu+DdCssd1FakN7Bc0hVNmEyGq1bq3RgfkCb3cmQLpNPOroA==}
     engines: {node: '>=4'}
-    dev: true
 
-  /sade@1.8.1:
+  sade@1.8.1:
     resolution: {integrity: sha512-xal3CZX1Xlo/k4ApwCFrHVACi9fBqJ7V+mwhBsuf/1IOKbBy098Fex+Wa/5QMubw09pSZ/u8EY8PWgevJsXp1A==}
     engines: {node: '>=6'}
-    dependencies:
-      mri: 1.2.0
-    dev: true
 
-  /tiny-glob@0.2.9:
+  tiny-glob@0.2.9:
     resolution: {integrity: sha512-g/55ssRPUjShh+xkfx9UPDXqhckHEsHr4Vd9zX55oSdGZc/MD0m3sferOkwWtp98bv+kcVfEHtRJgBVJzelrzg==}
-    dependencies:
-      globalyzer: 0.1.0
-      globrex: 0.1.2
-    dev: true
 
-  /ts-api-utils@1.0.3(typescript@5.0.4):
-    resolution: {integrity: sha512-wNMeqtMz5NtwpT/UZGY5alT+VoKdSsOOP/kqHFcUW1P/VRhH2wJ48+DN2WwUliNbQ976ETwDL0Ifd2VVvgonvg==}
-    engines: {node: '>=16.13.0'}
+  ts-api-utils@1.4.0:
+    resolution: {integrity: sha512-032cPxaEKwM+GT3vA5JXNzIaizx388rhsSW79vGRNGXfRRAdEAn2mvk36PvK5HnOchyWZ7afLEXqYCvPCrzuzQ==}
+    engines: {node: '>=16'}
     peerDependencies:
       typescript: '>=4.2.0'
-    dependencies:
-      typescript: 5.0.4
-    dev: true
 
-  /typescript@4.9.5:
-    resolution: {integrity: sha512-1FXk9E2Hm+QzZQ7z+McJiHL4NW1F2EzMu9Nq9i3zAaGqibafqYwCVU6WyWAuyQRRzOlxou8xZSyXLEN8oKj24g==}
-    engines: {node: '>=4.2.0'}
+  typescript@5.6.3:
+    resolution: {integrity: sha512-hjcS1mhfuyi4WW8IWtjP7brDrG2cuDZukyrYrSauoXGNgx0S7zceP07adYkJycEr56BOUTNPzbInooiN3fn1qw==}
+    engines: {node: '>=14.17'}
     hasBin: true
-    dev: true
 
-  /typescript@5.0.4:
-    resolution: {integrity: sha512-cW9T5W9xY37cc+jfEnaUvX91foxtHkza3Nw3wkoF4sSlKn0MONdkdEndig/qPBWXNkmplh3NzayQzCiHM4/hqw==}
-    engines: {node: '>=12.20'}
-    hasBin: true
-    dev: true
-
-  /uvu@0.5.6:
+  uvu@0.5.6:
     resolution: {integrity: sha512-+g8ENReyr8YsOc6fv/NVJs2vFdHBnBNdfE49rshrTzDWOlUx4Gq7KOS2GD8eqhy2j+Ejq29+SbKH8yjkAqXqoA==}
     engines: {node: '>=8'}
     hasBin: true
+
+snapshots:
+
+  '@jridgewell/gen-mapping@0.3.5':
+    dependencies:
+      '@jridgewell/set-array': 1.2.1
+      '@jridgewell/sourcemap-codec': 1.5.0
+      '@jridgewell/trace-mapping': 0.3.25
+
+  '@jridgewell/resolve-uri@3.1.2': {}
+
+  '@jridgewell/set-array@1.2.1': {}
+
+  '@jridgewell/source-map@0.3.6':
+    dependencies:
+      '@jridgewell/gen-mapping': 0.3.5
+      '@jridgewell/trace-mapping': 0.3.25
+
+  '@jridgewell/sourcemap-codec@1.5.0': {}
+
+  '@jridgewell/trace-mapping@0.3.25':
+    dependencies:
+      '@jridgewell/resolve-uri': 3.1.2
+      '@jridgewell/sourcemap-codec': 1.5.0
+
+  '@types/estree@1.0.1': {}
+
+  acorn-class-fields@1.0.0(acorn@8.10.0):
+    dependencies:
+      acorn: 8.10.0
+      acorn-private-class-elements: 1.0.0(acorn@8.10.0)
+
+  acorn-private-class-elements@1.0.0(acorn@8.10.0):
+    dependencies:
+      acorn: 8.10.0
+
+  acorn-static-class-features@1.0.0(acorn@8.10.0):
+    dependencies:
+      acorn: 8.10.0
+      acorn-private-class-elements: 1.0.0(acorn@8.10.0)
+
+  acorn@8.10.0: {}
+
+  dequal@2.0.3: {}
+
+  diff@5.2.0: {}
+
+  dts-buddy@0.5.3(typescript@5.6.3):
+    dependencies:
+      '@jridgewell/source-map': 0.3.6
+      '@jridgewell/sourcemap-codec': 1.5.0
+      globrex: 0.1.2
+      kleur: 4.1.5
+      locate-character: 3.0.0
+      magic-string: 0.30.12
+      sade: 1.8.1
+      tiny-glob: 0.2.9
+      ts-api-utils: 1.4.0(typescript@5.6.3)
+      typescript: 5.6.3
+
+  estree-walker@3.0.3:
+    dependencies:
+      '@types/estree': 1.0.1
+
+  globalyzer@0.1.0: {}
+
+  globrex@0.1.2: {}
+
+  kleur@4.1.5: {}
+
+  locate-character@3.0.0: {}
+
+  magic-string@0.30.12:
+    dependencies:
+      '@jridgewell/sourcemap-codec': 1.5.0
+
+  mri@1.2.0: {}
+
+  sade@1.8.1:
+    dependencies:
+      mri: 1.2.0
+
+  tiny-glob@0.2.9:
+    dependencies:
+      globalyzer: 0.1.0
+      globrex: 0.1.2
+
+  ts-api-utils@1.4.0(typescript@5.6.3):
+    dependencies:
+      typescript: 5.6.3
+
+  typescript@5.6.3: {}
+
+  uvu@0.5.6:
     dependencies:
       dequal: 2.0.3
-      diff: 5.1.0
+      diff: 5.2.0
       kleur: 4.1.5
       sade: 1.8.1
-    dev: true
