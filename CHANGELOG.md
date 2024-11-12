@@ -1,5 +1,10 @@
 # is-reference changelog
 
+## 3.0.3
+
+- Handle `import.meta` nodes ([#21](https://github.com/Rich-Harris/is-reference/pull/21))
+- Bump various dependencies
+
 ## 3.0.2
 
 - Generate types with `dts-buddy`
