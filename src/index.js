@@ -26,7 +26,7 @@ export default function is_reference (node, parent) {
 			// disregard the `foo` in `class {foo(){}}` but keep it in `class {[foo](){}}`
 			case 'MethodDefinition': return parent.computed;
 				
-			//disregard the `meta` in `import.meta`
+			// disregard the `meta` in `import.meta`
 			case 'MetaProperty': return parent.meta === node;
 				
 			// disregard the `foo` in `class {foo=bar}` but keep it in `class {[foo]=bar}` and `class {bar=foo}`
