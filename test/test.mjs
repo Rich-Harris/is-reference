@@ -6,7 +6,10 @@ import is_reference from '../src/index.js';
 import { test } from 'uvu';
 import * as assert from 'uvu/assert';
 
-const parser = acorn.Parser.extend(injectClassFields, injectStaticClassFeatures);
+const parser = acorn.Parser.extend(
+	injectClassFields,
+	injectStaticClassFeatures
+);
 
 const positive = {
 	'simple identifier': `
@@ -46,8 +49,8 @@ const positive = {
 		class Bar { [foo] = 1 };`,
 
 	'class field value': `
-		class Bar { bar = foo };`,
-	};
+		class Bar { bar = foo };`
+};
 
 const negative = {
 	'object literal property': `
@@ -65,13 +68,13 @@ const negative = {
 	'labeled continue': `
 		foo: while (true) continue foo;`,
 
-	'imported': `
+	imported: `
 		import { foo as bar } from 'x';`,
 
 	'class field': `
 		class Bar { foo = 1; }`,
 	'meta property': `
-		import.meta`,
+		import.meta`
 };
 
 function findFooReferences(code) {
@@ -95,7 +98,7 @@ function findFooReferences(code) {
 	return matches;
 }
 
-Object.keys(positive).forEach(name => {
+Object.keys(positive).forEach((name) => {
 	test(name, () => {
 		const code = positive[name];
 		const matches = findFooReferences(code);
@@ -104,7 +107,7 @@ Object.keys(positive).forEach(name => {
 	});
 });
 
-Object.keys(negative).forEach(name => {
+Object.keys(negative).forEach((name) => {
 	test(name, () => {
 		const code = negative[name];
 		const matches = findFooReferences(code);
@@ -114,10 +117,12 @@ Object.keys(negative).forEach(name => {
 });
 
 test('handles standalone expressions, without a Program', () => {
-	assert.ok(is_reference({
-		type: 'Identifier',
-		name: 'foo'
-	}))
+	assert.ok(
+		is_reference({
+			type: 'Identifier',
+			name: 'foo'
+		})
+	);
 });
 
 test.run();
