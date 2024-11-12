@@ -1,14 +1,8 @@
-/** @typedef { import('estree').Node} Node */
-/** @typedef {Node | {
- *   type: 'PropertyDefinition';
- *   computed: boolean;
- *   value: Node
- * }} NodeWithPropertyDefinition */
+/** @import { Node } from 'estree' */
 
 /**
- *
- * @param {NodeWithPropertyDefinition} node
- * @param {NodeWithPropertyDefinition} parent
+ * @param {Node} node
+ * @param {Node} parent
  * @returns {boolean}
  */
 export default function is_reference(node, parent) {

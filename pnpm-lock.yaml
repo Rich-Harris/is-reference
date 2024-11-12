@@ -9,8 +9,8 @@ importers:
   .:
     dependencies:
       '@types/estree':
-        specifier: '*'
-        version: 1.0.1
+        specifier: ^1.0.6
+        version: 1.0.6
     devDependencies:
       acorn:
         specifier: ^8.0.5
@@ -57,8 +57,8 @@ packages:
   '@jridgewell/trace-mapping@0.3.25':
     resolution: {integrity: sha512-vNk6aEwybGtawWmy/PzwnGDOjCkLWSD2wqvjGGAgOAwCGWySYXfYoxt00IJkTF+8Lb57DwOb3Aa0o9CApepiYQ==}
 
-  '@types/estree@1.0.1':
-    resolution: {integrity: sha512-LG4opVs2ANWZ1TJoKc937iMmNstM/d0ae1vNbnBvBhqCSezgVUOzcLCqbI5elV8Vy6WKwKjaqR+zO9VKirBBCA==}
+  '@types/estree@1.0.6':
+    resolution: {integrity: sha512-AYnb1nQyY49te+VRAVgmzfcgjYS91mY5P0TKUDCLEM+gNnA+3T6rWITXRLYCpahpqSQbN5cE+gHpnPyXjHWxcw==}
 
   acorn-class-fields@1.0.0:
     resolution: {integrity: sha512-l+1FokF34AeCXGBHkrXFmml9nOIRI+2yBnBpO5MaVAaTIJ96irWLtcCxX+7hAp6USHFCe+iyyBB4ZhxV807wmA==}
@@ -167,7 +167,7 @@ snapshots:
       '@jridgewell/resolve-uri': 3.1.2
       '@jridgewell/sourcemap-codec': 1.5.0
 
-  '@types/estree@1.0.1': {}
+  '@types/estree@1.0.6': {}
 
   acorn-class-fields@1.0.0(acorn@8.10.0):
     dependencies:
@@ -204,7 +204,7 @@ snapshots:
 
   estree-walker@3.0.3:
     dependencies:
-      '@types/estree': 1.0.1
+      '@types/estree': 1.0.6
 
   globalyzer@0.1.0: {}
 
