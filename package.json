@@ -3,11 +3,10 @@
 	"version": "3.0.3",
 	"description": "Determine whether an AST node is a reference",
 	"type": "module",
-	"module": "src/index.js",
 	"types": "types/index.d.ts",
 	"exports": {
 		"types": "./types/index.d.ts",
-		"import": "./src/index.js"
+		"default": "./src/index.js"
 	},
 	"files": [
 		"src",
